@@ -1,6 +1,6 @@
 <?php
 
-class Client extends Connect{
+class Cliente extends Connect{
 
     public function insert($query){
         $this->connect();
