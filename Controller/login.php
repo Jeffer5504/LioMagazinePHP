@@ -1,8 +1,10 @@
-<?php 
-    // Variaveis finais do HTML
-    $usuario = $_POST["usuario"];
-    $senha = $_POST["senha"];
+<?php include "../Model/User.php";?> 
+<?php
 
-    // Query para selecionar os campos usuario e senha do database login
-    $sql = ("SELECT * FROM login_adm WHERE usuario = '$usuario'");
+    // Variaveis finais do HTML
+    $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
+    $senha   = filter_input(INPUT_POST, 'senha',   FILTER_SANITIZE_STRING);
     
+    // Instancia a classe de usuario
+    $user = new User();
+    $user->logar($usuario, $senha);
