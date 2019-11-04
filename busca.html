@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LioMagazine - Busca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/config.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="js/all.js"></script>
+    </head>
+    <body>
+        <a href="inicio.html">
+            <img class="logo" src="./images/logo.png">
+        </a>
+        
+        <section class="box">
+
+            <form action="conexaoBusca.jsp" method="post">
+                <a href="inicio.html">
+                    <i class="fas fa-arrow-left" id="voltar"></i>
+                </a>
+
+                <h1>Busca</h1>
+                <select class="busca" name="select">
+                    <option>CLIENTE</option>
+                    <option>PRODUTO</option>
+                    <option>VENDA</option>
+                </select>
+                
+                <input type="text" id="text-busca" name="busca" placeholder="Digite a busca" required>
+                <button id="button-busca"><i class="fas fa-search"></i></button>
+            </form>
+
+        </section>
+    </body>
+</html>

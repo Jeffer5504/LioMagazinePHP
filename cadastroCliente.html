@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lio Magazine - Cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/config.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="js/all.js"></script>
+    </head>
+    <body>
+        <a href="inicio.html">
+            <img class="logo" src="./images/logo.png">
+        </a>
+        <section class="box">
+            
+            <form action="conexaoCliente.jsp" method="post">
+                <a href="inicio.html">
+                    <i class="fas fa-arrow-left" id="voltar"></i>
+                </a>
+                
+                <h1>Cadastro Cliente</h1>
+                <label>Cliente:</label>
+                <input type="text" name="cliente" placeholder="Ex. Nome Sobrenome" required autofocus>
+
+                <label>E-mail:</label>
+                <input type="text" name="email" placeholder="Ex. nome@email.com" required>
+
+                <label>Telefone:</label>
+                <input type="text" name="telefone" placeholder="Ex. 71987654321" required>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+            
+        </section>
+    </body>
+</html>

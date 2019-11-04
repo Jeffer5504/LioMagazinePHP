@@ -1,0 +1,25 @@
+/* Remove botao de seta do input */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+}
+
+/* Remove barra de rolagem do textarea */
+.box ::-webkit-scrollbar{
+    display: none;
+}
+
+/* Personaliza barra de rolagem da pagina */
+::-webkit-scrollbar{
+    width: 10px;
+    background: #ddd;
+} 
+::-webkit-scrollbar-button{
+    background: #999;
+}
+::-webkit-scrollbar-thumb{
+    background: #ddd;
+}
+::-webkit-scrollbar-track-piece{
+    background: #d63151;
+}

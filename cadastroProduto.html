@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lio Magazine - Produto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/config.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/all.js"></script> 
+    </head>
+    <body>
+        <a href="inicio.html">
+            <img class="logo" src="./images/logo.png">
+        </a>
+        <section class="box">
+            
+            <form action="conexaoProduto.jsp" method="post">
+                <a href="inicio.html">
+                    <i class="fas fa-arrow-left" id="voltar"></i>
+                </a>
+                
+                <h1>Cadastro Produto</h1>
+                <label>Produto:</label>
+                <input type="text" name="produto" placeholder="Ex. Fone JBL" required autofocus>
+
+                <label>Descrição:</label>
+                <textarea name="descricao" placeholder="Ex. Fone de ouvido intra auricular, com alta definição de som. Perfeito para aqueles que gostam de ouvir um..." rows="5" cols="33"></textarea>
+                
+                <label>Quantidade:</label>
+                <input type="number" name="quantidade" placeholder="Ex. 10" required>
+
+                <label>Preço:</label>
+                <input type="text" name="preco" placeholder="Ex. 49.99" required>
+
+                <label>Desconto(%):</label>
+                <input type="number" name="desconto" placeholder="Ex. 25">
+
+                <label>Data:</label>
+                <input type="date" name="data">
+                
+                <input type="submit" value="Cadastrar">
+            </form>
+            
+        </section>
+    </body>
+</html>

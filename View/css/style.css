@@ -1,0 +1,147 @@
+body{
+    background-color: #d63151;  
+    color: #ffffff;
+    text-align: center;
+}
+
+.logo{
+    margin: 10px auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.box{
+    display: block;
+    margin: 20px auto;
+    border-radius: 24px;
+    width: 300px;
+    padding: 40px;
+    background-color: #dddddd;
+    text-align: center;
+    border: 2px solid #333333;
+    box-shadow: 6px 6px 4px #781b2d;
+}
+
+.box h1{    
+    color: #333333;
+    text-transform: uppercase;
+    font-weight: 900;    
+    padding-bottom: 20px;
+}
+
+.box label{
+    text-transform: uppercase;
+    font-weight: 900;   
+    color: #111111;
+    margin: 0;
+}
+
+.box input{
+    width: 200px;
+    font-size: 16px;
+}
+
+.box input[type = "text"],
+.box input[type = "number"],
+.box input[type = "date"],
+.box input[type = "email"],
+.box input[type = "password"],
+.box textarea{
+    border: 0;
+    background: none;
+    display:block;
+    margin: 5px auto;
+    text-align: center;
+    border:2px solid #d63151 ;
+    padding: 14px 0px;
+    width: 200px;
+    outline: none;
+    color: #d63151;
+    font-weight: 700;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type = "text"]:focus,
+.box input[type = "number"]:focus,
+.box textarea:focus{
+    width: 280px;
+    border-color:#333; 
+}
+
+.box textarea{
+    height: 80px;
+}
+
+.box input[type = submit],
+.box button,
+.box select{
+    width: 200px;
+    color: #d63151;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #d63151 ;
+    padding: 15px 0px;
+    border-radius: 24px;
+    transition: 0.5s; 
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.box input[type = submit]:hover{
+    background-color: #d63151;
+    color: white;
+}
+
+.box select{
+    font-size: 16px;
+    text-align-last: center;
+    font-weight: 900;
+}
+
+.box option{
+    background: #333;
+    color: #d63151;
+    font-weight: 700;
+}
+
+#voltar{
+    width: 30px;
+    font-size: 25px;
+    border-radius: 5px;
+    position: relative; 
+    left: -160px;
+    top: -20px;
+    display: inline-block;
+    color: #d63151;
+}
+
+#text-busca{
+    width: 113px;
+    border-radius: 24px 0 0 24px;
+    display: inline-block;
+    padding: 17px;
+    border-right: none;
+    margin: 0;
+}
+#text-busca:focus ~ #button-busca{
+    border-color: #333; 
+}
+
+#button-busca{
+    width: 51px; height: 57px;
+    padding: 17px;
+    display: inline-block;
+    border-radius: 0 24px 24px 0;
+    border-left: none;
+    margin: 0 0 0 -5px;
+    position: relative;
+    top: -1px;
+}
+#button-busca:hover{
+    background: #d63151;
+    color: #dddddd;
+}
