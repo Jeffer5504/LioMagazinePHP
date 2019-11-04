@@ -6,7 +6,5 @@ class Cliente extends Connect{
         $this->connect();
         $this->query = $this->mysqli->query($query);
         $this->disconnect();
-
-        return $this->query;
     }
 }
