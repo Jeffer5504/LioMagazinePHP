@@ -1,10 +1,11 @@
 <?php
 
-class Produto extends Connect{
+class Produto extends Conexao{
 
     public function insert($query){
-        $this->connect();
-        $this->query = $this->mysqli->query($query);
-        $this->disconnect();
+        $this->conecta();
+        $this->query = $this->mysqli->query($query);  
+        $this->disconecta();
     }
+    
 }

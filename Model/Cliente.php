@@ -1,10 +1,10 @@
 <?php
 
-class Cliente extends Connect{
+class Cliente extends Conexao{
 
     public function insert($query){
-        $this->connect();
+        $this->conecta();
         $this->query = $this->mysqli->query($query);
-        $this->disconnect();
+        $this->disconecta();
     }
 }
