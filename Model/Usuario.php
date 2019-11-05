@@ -7,7 +7,7 @@
 
             $this->conecta();
             $this->query =$this->mysqli->query($query);
-            
+            $this->disconecta();
 
             $dbArray = mysqli_fetch_array($this->query);
             $dbUsuario = $dbArray[0];
