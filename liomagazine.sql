@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 12-Out-2019 às 01:10
--- Versão do servidor: 10.3.16-MariaDB
--- versão do PHP: 7.3.7
+-- Host: 127.0.0.1:3306
+-- Generation Time: 05-Nov-2019 às 02:05
+-- Versão do servidor: 5.7.26
+-- versão do PHP: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `liomagazine`
+-- Database: `liomagazine`
 --
 CREATE DATABASE IF NOT EXISTS `liomagazine` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `liomagazine`;
@@ -38,17 +38,14 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telefone` varchar(14) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
 INSERT INTO `cliente` (`idCliente`, `cliente`, `email`, `telefone`) VALUES
-(1, 'Guilherme Caires', 'gcaires@gmail.com', '7198151552'),
-(2, 'Jefferson Eloy', 'jeffeloy@gmail.com', '71987654321'),
-(3, 'Joanderson Cabelinho', 'cabelinho@gmail.com', '71123456789'),
-(4, 'Celso', 'celso@gmail.com', '71999999999');
+(6, 'Jefferson', 'jeff@gmail.com', '71992346875');
 
 -- --------------------------------------------------------
 
@@ -86,21 +83,17 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `preco` float NOT NULL,
   `quantidade` int(11) NOT NULL,
   `desconto` float NOT NULL,
-  `subtotal` float NOT NULL,
-  `data` varchar(10) NOT NULL,
+  `datap` varchar(10) NOT NULL,
   PRIMARY KEY (`idProduto`),
   UNIQUE KEY `produto` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`idProduto`, `nome`, `descricao`, `preco`, `quantidade`, `desconto`, `subtotal`, `data`) VALUES
-(1, 'Fone', 'Fone de ouvido intra- auricular muito bom e resistente.', 30, 5, 5, 28.5, '08/10/2019'),
-(3, 'Caixa de som', 'Sem descrição.', 89.99, 12, 10, 80.991, '08/10/2019'),
-(4, 'Teclado Daten', 'Sem descrição.', 30, 18, 50, 15, '08/10/2019'),
-(5, 'Mouse', 'Sem descrição.', 20.99, 16, 10, 18.891, '08/10/2019');
+INSERT INTO `produto` (`idProduto`, `nome`, `descricao`, `preco`, `quantidade`, `desconto`, `datap`) VALUES
+(10, 'Fone Blue', 'adda', 30.99, 1, 5, '2019-11-04');
 
 -- --------------------------------------------------------
 
@@ -121,19 +114,6 @@ CREATE TABLE IF NOT EXISTS `venda` (
   `data` varchar(10) NOT NULL,
   PRIMARY KEY (`idVenda`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `venda`
---
-
-INSERT INTO `venda` (`idVenda`, `idCliente`, `idProduto`, `desconto`, `quantidade`, `subtotal`, `total`, `obs`, `data`) VALUES
-(1, 1, 1, 5, 2, 56, 53.2, 'O Cliente pediu para que o produto fosse embalado para presente.', '08/10/2019'),
-(2, 2, 3, 0, 1, 80, 80, 'Sem observações.', '08/10/2019'),
-(3, 3, 3, 0, 2, 160, 160, 'Sem observações.', '08/10/2019'),
-(4, 3, 1, 5, 3, 84, 79.8, 'Sem observações.', '08/10/2019'),
-(5, 4, 5, 5, 3, 54, 51.3, 'Sem observações.', '01/10/2019'),
-(6, 2, 5, 0, 1, 18, 18, 'Sem observações.', '08/10/2019'),
-(7, 2, 4, 0, 2, 30, 30, 'Sem observações.', '08/10/2019');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
