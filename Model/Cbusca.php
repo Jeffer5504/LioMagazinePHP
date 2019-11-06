@@ -50,7 +50,7 @@ class Cbusca extends Conexao{
 
            $this->disconecta();
             
-            ;
+            ;break;
            }
         }
     }
