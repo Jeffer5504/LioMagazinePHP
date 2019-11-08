@@ -20,7 +20,7 @@ class Busca extends Conexao{
                 echo '<label>Nome: </label>'.$cliente.'</br>';
                 echo '<label>Email: </label>'.$email.'</br>';
                 echo '<label>Telefone: </label>'.$telefone.'</br>';
-
+                exit();
                 $this->disconecta();
             ;break;
 
@@ -42,7 +42,7 @@ class Busca extends Conexao{
                 echo '<label>Preço: </label>'.$preco.'</br>';
                 echo '<label>Quantidade: </label>'.$quantidade.'</br>';
                 echo '<label>Data: </label>'.$data.'</br>'.'</br>';
-
+                exit();
                 $this->disconecta();
             ;break;
 
