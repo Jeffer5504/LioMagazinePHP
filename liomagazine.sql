@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: 08-Nov-2019 às 15:44
+=======
+-- Generation Time: 08-Nov-2019 às 15:13
+>>>>>>> master
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -38,15 +42,24 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telefone` varchar(14) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `email` (`email`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+>>>>>>> master
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
 INSERT INTO `cliente` (`idCliente`, `cliente`, `email`, `telefone`) VALUES
+<<<<<<< HEAD
 (6, 'Jefferson', 'jeff@gmail.com', '71992346875'),
 (7, 'Teste', 'teste@gmail.com', '71986234568');
+=======
+(1, 'Guilherme Caires', 'gcaires@gmail.com', '71 9 8515-1552'),
+(2, 'Jefferson Eloy', 'jeff@gmail.com', '71 9 9999-9999');
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -87,14 +100,16 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `datap` varchar(10) NOT NULL,
   PRIMARY KEY (`idProduto`),
   UNIQUE KEY `produto` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`idProduto`, `nome`, `descricao`, `preco`, `quantidade`, `desconto`, `datap`) VALUES
-(10, 'Fone Blue', 'adda', 30.99, 1, 5, '2019-11-04');
+(1, 'Fone', 'Fone de ouvido JBL.', 34.99, 20, 10, '2019-11-08'),
+(2, 'Mouse', '', 15, 40, 0, '2019-11-08'),
+(3, 'Teclado', '', 50, 38, 0, '2019-11-08');
 
 -- --------------------------------------------------------
 
@@ -113,7 +128,18 @@ CREATE TABLE IF NOT EXISTS `venda` (
   `obs` varchar(100) NOT NULL,
   `datav` varchar(10) NOT NULL,
   PRIMARY KEY (`idVenda`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `venda`
+--
+
+INSERT INTO `venda` (`idVenda`, `idCliente`, `idProduto`, `desconto`, `quantidade`, `subtotal`, `total`, `obs`, `datav`) VALUES
+(1, 1, 1, 0, 0, 3, 0, 'O cliente pediu para embalar para presente.', '2019-11-08');
+>>>>>>> master
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
