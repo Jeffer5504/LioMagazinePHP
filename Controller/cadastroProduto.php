@@ -9,6 +9,7 @@
     $desconto   = filter_input(INPUT_POST, 'desconto',  FILTER_SANITIZE_STRING);
     $data       = filter_input(INPUT_POST, 'data',  FILTER_SANITIZE_STRING);
     
+    
     //Query para cadastrar o cliente no banco de dados.
     $sql ="INSERT INTO produto (nome,descricao,preco,quantidade,desconto,datap) VALUES ('$produto','$descricao','$preco','$quantidade','$desconto','$data')";
     $produto = new Produto();

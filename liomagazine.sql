@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: 05-Nov-2019 às 02:05
--- Versão do servidor: 5.7.26
--- versão do PHP: 7.2.18
+-- Host: 127.0.0.1
+-- Generation Time: 08-Nov-2019 às 15:44
+-- Versão do servidor: 10.1.38-MariaDB
+-- versão do PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,14 +38,15 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telefone` varchar(14) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
 INSERT INTO `cliente` (`idCliente`, `cliente`, `email`, `telefone`) VALUES
-(6, 'Jefferson', 'jeff@gmail.com', '71992346875');
+(6, 'Jefferson', 'jeff@gmail.com', '71992346875'),
+(7, 'Teste', 'teste@gmail.com', '71986234568');
 
 -- --------------------------------------------------------
 
@@ -106,14 +107,13 @@ CREATE TABLE IF NOT EXISTS `venda` (
   `idVenda` int(11) NOT NULL AUTO_INCREMENT,
   `idCliente` int(11) NOT NULL,
   `idProduto` int(11) NOT NULL,
-  `desconto` float NOT NULL,
   `quantidade` int(11) NOT NULL,
   `subtotal` float NOT NULL,
   `total` float DEFAULT NULL,
   `obs` varchar(100) NOT NULL,
-  `data` varchar(10) NOT NULL,
+  `datav` varchar(10) NOT NULL,
   PRIMARY KEY (`idVenda`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
