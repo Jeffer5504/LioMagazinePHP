@@ -1,7 +1,9 @@
 <?php
 
+// Criação de uma classe, seguida de uma Herança do arquivo de conexão do banco de dados.
 class Venda extends Conexao{
     
+    //cria variaveis privadas para alocação de classe do venda.
     private $email;
     private $produto;
     private $idCliente;
@@ -16,22 +18,25 @@ class Venda extends Conexao{
     private $dbQuantidade;
     private $dbSubtotal;
 
+    //Herança da classe método buscando os camos e informaçõs da tabela no banco de dados.
     public function insert($query){
         $this->conecta();
         $this->query = $this->mysqli->query($query);
         $this->disconecta();
     }
-      
+    // Métodos Get e Set para pega e inserção de dados feitos nesta classe.
       public function setPreco($preco) {
         $this->preco= $preco;
       }
+
       public function getQuantidade() {
         return $this->quantidade;
       }
-      
+    
       public function setQuantidade($quantidade) {
         $this->quantidade= $quantidade;
       }
+
       public function getDesconto() {
         return $this->desconto;
       }
@@ -43,6 +48,7 @@ class Venda extends Conexao{
         return $this->subtotal;
       }
       
+      //calcula o subtotal do produto com a quantidade.
       public function setSubtotal() {
         $this->subtotal = $this->quantidade * $this->dbSubtotal;
       }
@@ -50,6 +56,7 @@ class Venda extends Conexao{
         return $this->total;
       }
       
+      //faz o calculo do total com a porcentagem de desconto aplicado.
       public function setTotal() {
         $this->total = $this->subtotal - ($this->subtotal * ($this->desconto/100)); 
       }
@@ -67,6 +74,7 @@ class Venda extends Conexao{
       public function setData($data) {
         $this->data= $data;
       }
+      //faz uma estrutura de condifional de se para falar ao programa que se a quantidade for maior que a quantidade ele retorna o valor dela por ela mesma para evitar bugs.
       public function getdbQuantidade() {
         if ($this->dbQuantidade >= $this->quantidade){
             return $this->dbQuantidade - $this->quantidade;

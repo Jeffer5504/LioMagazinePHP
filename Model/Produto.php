@@ -1,7 +1,9 @@
 <?php
 
+// Criação de uma classe, seguida de uma Herança do arquivo de conexão do banco de dados.
 class Produto extends Conexao {
 
+    //cria variaveis privadas para alocação de classe do produto.
     private $produto;
     private $descricao;
     private $quantidade;
@@ -9,6 +11,7 @@ class Produto extends Conexao {
     private $desconto;
     private $data;
 
+    //metodo publico para construção dos campos contido nos banco de dados.
     public function __construct($produto, $descricao, $quantidade, $preco, $desconto, $data) {
         $this->produto    = $produto;
         $this->descricao  = $descricao;
@@ -21,12 +24,14 @@ class Produto extends Conexao {
         $this->insert();
     }
 
+    //metodo publico de set para inserir a descrição.
     public function setDescricao(){
         if ($this->descricao == NULL) {
             $this->descricao == "Sem descrição";
         }
     }   
 
+    //metodo publico de set para inserir data e o formato.
     public function setData(){
         if ($this->data == NULL) {
             $this->data = date("d/m/Y");
@@ -36,15 +41,17 @@ class Produto extends Conexao {
     }
 
 
-    
+    //meotodo publico get pegar o produto do banco e instanciar na classe.
     public function getProduduto(){
         return $this->produto;
     }
 
+    //metodo publico de set para inserir o produto
     public function setProduto($produto){
         $this->produto = $produto;
     }
 
+    //metoro publico com a função de inserir os dados da classe dentro do banco de dados.
     public function insert(){
         $this->conecta();
 

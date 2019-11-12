@@ -1,36 +1,48 @@
 <?php
 
+// Criação de uma classe, seguida de uma Herança do arquivo de conexão do banco de dados.
 class Busca extends Conexao{
-
+    
+    // Cria um metodo publico para busca no banco de dados.
     public function busca($select, $busca){
-        
+
+        //Criação de uma estrutura de escolha para o campo select do metodo busca.
         switch($select){
 
+            //Estrutura condicional, para selecionar as informações do cliente.
             case "CLIENTE":
-            
+
+                //Herança da classe método buscando os camos e informaçõs da tabela no banco de dados.
                 $this->conecta();
                 $query="SELECT cliente,email,telefone FROM cliente WHERE cliente like '%".$busca."%'";
                 $this->query = $this->mysqli->query($query);
-            
+
+                //Cria as Linhas de array para armazenar os campos obtidos como resultado da busca.            
                 $dbArray = mysqli_fetch_array($this->query);
                 $cliente = $dbArray[0];
                 $email = $dbArray[1];
                 $telefone = $dbArray[2];
                 
+                //impressão das informações na tela. 
                 echo '<label>Nome: </label>'.$cliente.'</br>';
                 echo '<label>Email: </label>'.$email.'</br>';
                 echo '<label>Telefone: </label>'.$telefone.'</br>';
+
+                //finalização da conexão com banco.
                 exit();
                 $this->disconecta();
 
             ;break;
 
+            //Estrutura condicional, para selecionar as informações do produto.
             case "PRODUTO":
             
+                //Herança da classe método buscando os camos e informaçõs da tabela no banco de dados.
                 $this->conecta();
                 $query="SELECT nome, descricao, preco, quantidade, dataP FROM produto WHERE nome LIKE '%".$busca."%'";
                 $this->query = $this->mysqli->query($query);
                 
+                //Cria as Linhas de array para armazenar os campos obtidos como resultado da busca.
                 $dbArray = mysqli_fetch_array($this->query); 
                 $nome = $dbArray[0];
                 $descricao = $dbArray[1];
@@ -38,6 +50,7 @@ class Busca extends Conexao{
                 $quantidade = $dbArray[3];
                 $data = $dbArray[4];
                 
+                //estrutura condicional para, faz com que os produtos mostrados se repitam até suas quantias.
                 for ($i=0; $i <= 5; $i++) { 
                     echo '<label style="">Nome: </label>'.$dbArray[$i].'<br>';
                 }
@@ -47,18 +60,22 @@ class Busca extends Conexao{
                 #echo '<label>Preço: </label>'.$preco.'</br>';
                 #echo '<label>Quantidade: </label>'.$quantidade.'</br>';
                 #echo '<label>Data: </label>'.$data.'</br>'.'</br>';
-                exit();
 
+                //finaliza conexão com banco de dados.
+                exit();
                 $this->disconecta();
 
             ;break;
 
+            //Estrutura condicional, para selecionar as informações do produto.
             case "VENDA":
             
+                //Herança da classe método buscando os camos e informaçõs da tabela no banco de dados.
                 $this->conecta();
                 $query="SELECT * FROM venda WHERE datav LIKE '%".$busca."%'";
                 $this->query = $this->mysqli->query($query);
 
+                //Estrutura condicional para repetição do metodo while de impressão das imformações.
                 while ($result=mysqli_fetch_array($this->query)) {
                     echo '<label>Id Venda:   </label>' . $result['idVenda']     .'</br>';
                     echo '<label>Cliente:    </label>' . $result['idCliente']   .'</br>';
@@ -69,9 +86,10 @@ class Busca extends Conexao{
                     echo '<label>Total:      </label>' . $result['total']       .'</br>';
                     echo '<label>Observação: </label>' . $result['obs']         .'</br>';
                     echo '<label>Data:       </label>' . $result['datav']       .'</br>';
-                    echo '</br>';
-                } exit();
-
+                    echo '</br>';} 
+                
+                //finaliza conexão com banco de dados.
+                exit();
                 $this->disconecta();
 
             ;break;
