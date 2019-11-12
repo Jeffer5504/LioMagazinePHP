@@ -2,12 +2,11 @@
  
     class Usuario extends Conexao {
         
-        public function logar($query,$usuario,$senha) {
-           
-
+        public function logar($usuario,$senha) {
             $this->conecta();
-            $this->query =$this->mysqli->query($query);
-
+            $query= "SELECT usuario,senha FROM login_adm WHERE usuario = '$usuario'";
+            $this->query = $this->mysqli->query($query);
+        
             $dbArray = mysqli_fetch_array($this->query);
 
             if ($usuario == $dbArray[0] && $senha == $dbArray[1]) {
@@ -15,7 +14,6 @@
             } else {
                 header('Location: ../View/index.html');
             }
-           
         }
 
     }

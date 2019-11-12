@@ -5,8 +5,7 @@
     // Variaveis finais do HTML
     $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
     $senha   = filter_input(INPUT_POST, 'senha',   FILTER_SANITIZE_STRING);
-    
-    $sql = "SELECT usuario,senha FROM login_adm WHERE usuario = '$usuario'";
+  
     // Instancia a classe de usuario
     $user = new Usuario();
-    $user->logar($sql,$usuario,$senha);
+    $user->logar($usuario,$senha);

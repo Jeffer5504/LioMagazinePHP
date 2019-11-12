@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="../View/css/reset.css">
     <link rel="stylesheet" href="../View/css/config.css">
     <link rel="stylesheet" href="../View/css/style.css">
-    <script src="js/all.js"></script>
+    <script src="../View/js/all.js"></script>
 </head>
 <body>
     <section class="box" style="color:black;">   
-    
+
         <?php include "../Model/Conexao.php";?>
         <?php include "../Model/Busca.php";?>
         <?php

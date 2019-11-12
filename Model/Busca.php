@@ -22,6 +22,7 @@ class Busca extends Conexao{
                 echo '<label>Telefone: </label>'.$telefone.'</br>';
                 exit();
                 $this->disconecta();
+
             ;break;
 
             case "PRODUTO":
@@ -37,13 +38,19 @@ class Busca extends Conexao{
                 $quantidade = $dbArray[3];
                 $data = $dbArray[4];
                 
-                echo '<label>Nome: </label>'.$nome.'</br>';
-                echo '<label>Descrição: </label>'.$descricao.'</br>';
-                echo '<label>Preço: </label>'.$preco.'</br>';
-                echo '<label>Quantidade: </label>'.$quantidade.'</br>';
-                echo '<label>Data: </label>'.$data.'</br>'.'</br>';
+                for ($i=0; $i <= 5; $i++) { 
+                    echo '<label style="">Nome: </label>'.$dbArray[$i].'<br>';
+                }
+
+                #echo '<label>Nome: </label>'.$nome.'</br>';
+                #echo '<label>Descrição: </label>'.$descricao.'</br>';
+                #echo '<label>Preço: </label>'.$preco.'</br>';
+                #echo '<label>Quantidade: </label>'.$quantidade.'</br>';
+                #echo '<label>Data: </label>'.$data.'</br>'.'</br>';
                 exit();
+
                 $this->disconecta();
+
             ;break;
 
             case "VENDA":
@@ -64,8 +71,9 @@ class Busca extends Conexao{
                     echo '<label>Data:       </label>' . $result['datav']       .'</br>';
                     echo '</br>';
                 } exit();
-                
+
                 $this->disconecta();
+
             ;break;
            }
         }

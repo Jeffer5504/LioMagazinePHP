@@ -34,5 +34,5 @@
     $venda = new Venda();
     $venda -> insert($sql);
     
-    //header ('LOCATION: ../View/inicio.html');
+    header ('LOCATION: ../View/inicio.html');
 ?>
