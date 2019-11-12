@@ -1,7 +1,8 @@
+<?php include_once('Conexao.php')?>
 <?php
 
 // Criação de uma classe, seguida de uma Herança do arquivo de conexão do banco de dados.
-class Venda extends Conexao{
+class Venda {
     
     //cria variaveis privadas para alocação de classe do venda.
     private $email;
@@ -20,9 +21,10 @@ class Venda extends Conexao{
 
     //Herança da classe método buscando os camos e informaçõs da tabela no banco de dados.
     public function insert($query){
-        $this->conecta();
-        $this->query = $this->mysqli->query($query);
-        $this->disconecta();
+        $conn = new Conexao();
+        $conn->conecta();
+        $conn->query = $conn->mysqli->query($query);
+        $conn->disconecta();
     }
     // Métodos Get e Set para pega e inserção de dados feitos nesta classe.
       public function setPreco($preco) {

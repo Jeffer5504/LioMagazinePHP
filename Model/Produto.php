@@ -1,7 +1,8 @@
+<?php include_once('Conexao.php')?>
 <?php
 
 // Criação de uma classe, seguida de uma Herança do arquivo de conexão do banco de dados.
-class Produto extends Conexao {
+class Produto {
 
     //cria variaveis privadas para alocação de classe do produto.
     private $produto;
@@ -61,10 +62,11 @@ class Produto extends Conexao {
 
     //metoro publico com a função de inserir os dados da classe dentro do banco de dados.
     public function insert(){
-        $this->conecta();
-        $this->query ="INSERT INTO produto (nome,descricao,preco,quantidade,desconto,datap) VALUES ('$this->produto','$this->descricao','$this->preco','$this->quantidade','$this->desconto','$this->data')";
-        $this->mysqli->query($this->query);
-        $this->disconecta();
+        $conn = new Conexao();
+        $conn->conecta();
+        $conn->query ="INSERT INTO produto (nome,descricao,preco,quantidade,desconto,datap) VALUES ('$this->produto','$this->descricao','$this->preco','$this->quantidade','$this->desconto','$this->data')";
+        $conn->mysqli->query($conn->query);
+        $conn->disconecta();
     }
 
 }
