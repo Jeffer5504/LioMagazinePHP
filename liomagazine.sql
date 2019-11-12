@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Nov-2019 às 15:44
+-- Generation Time: 12-Nov-2019 às 12:49
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -38,15 +38,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telefone` varchar(14) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `cliente`
---
-
-INSERT INTO `cliente` (`idCliente`, `cliente`, `email`, `telefone`) VALUES
-(6, 'Jefferson', 'jeff@gmail.com', '71992346875'),
-(7, 'Teste', 'teste@gmail.com', '71986234568');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -87,14 +79,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `datap` varchar(10) NOT NULL,
   PRIMARY KEY (`idProduto`),
   UNIQUE KEY `produto` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `produto`
---
-
-INSERT INTO `produto` (`idProduto`, `nome`, `descricao`, `preco`, `quantidade`, `desconto`, `datap`) VALUES
-(10, 'Fone Blue', 'adda', 30.99, 1, 5, '2019-11-04');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -113,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `venda` (
   `obs` varchar(100) NOT NULL,
   `datav` varchar(10) NOT NULL,
   PRIMARY KEY (`idVenda`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
