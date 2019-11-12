@@ -34,12 +34,20 @@ class Produto extends Conexao {
     //metodo publico de set para inserir data e o formato.
     public function setData(){
         if ($this->data == NULL) {
-            $this->data = date("d/m/Y");
+            $this->data = new DateTime();
+            $this->data = date('d/m/Y');
         } else {
-            // ! FORMATAR DATA AQUI
+            $this->inverteData("2019-11-11");
         }
     }
 
+    function inverteData($data){
+        if(count(explode("/",$data)) > 1){
+            return implode("-",array_reverse(explode("/",$data)));
+        }elseif(count(explode("-",$data)) > 1){
+            return implode("/",array_reverse(explode("-",$data)));
+        }
+    }
 
     //meotodo publico get pegar o produto do banco e instanciar na classe.
     public function getProduduto(){
@@ -54,12 +62,9 @@ class Produto extends Conexao {
     //metoro publico com a função de inserir os dados da classe dentro do banco de dados.
     public function insert(){
         $this->conecta();
-
         $this->query ="INSERT INTO produto (nome,descricao,preco,quantidade,desconto,datap) VALUES ('$this->produto','$this->descricao','$this->preco','$this->quantidade','$this->desconto','$this->data')";
-
         $this->mysqli->query($this->query);
         $this->disconecta();
     }
-
 
 }
