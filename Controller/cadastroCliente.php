@@ -1,4 +1,3 @@
-<?php include "../Model/Conexao.php";?>
 <?php include "../Model/Cliente.php";?>
 <?php
 
@@ -11,3 +10,5 @@
     $sql     =  "INSERT INTO cliente (cliente,email,telefone) VALUES ('$cliente','$email','$telefone')";
     $cliente =  new Cliente();
     $cliente -> insert($sql);
+
+    header('Location: ../View/inicio.html');

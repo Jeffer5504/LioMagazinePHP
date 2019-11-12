@@ -1,4 +1,3 @@
-<?php include "../Model/Conexao.php";?>
 <?php include "../Model/Usuario.php";?> 
 <?php
 

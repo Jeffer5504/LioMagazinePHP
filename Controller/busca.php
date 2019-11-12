@@ -13,13 +13,10 @@
 <body>
     <section class="box" style="color:black;">
 
-    <!-- Chama a coneção com banco de dados na pasta model. -->
-        <?php include "../Model/Conexao.php";?>
-
-    <!-- Chama a busca pelos campos do banco de dados. -->
+        <!-- Chama a busca pelos campos do banco de dados. -->
         <?php include "../Model/Busca.php";?>
 
-    <!-- Criação da busca pelos tabelas do banco de dados e suas informações. -->
+        <!-- Criação da busca pelos tabelas do banco de dados e suas informações. -->
         <?php
             // Cria uma váriavel para selecionar pelo metodo 'POST' do busca.html e retorna os valores para entregar ao arquivo busca.php.
             $select = filter_input(INPUT_POST, 'select',  FILTER_SANITIZE_STRING);

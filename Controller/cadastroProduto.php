@@ -1,4 +1,3 @@
-<?php include "../Model/Conexao.php";?>
 <?php include "../Model/Produto.php";?>
 <?php 
     //Variáveis finais do html
